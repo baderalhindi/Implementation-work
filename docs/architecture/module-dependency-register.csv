@@ -1,0 +1,283 @@
+caller,caller_wf_fg,caller_layer,callee,callee_wf_fg,callee_layer,type,conditional,contract_basis,purpose
+AuditActivity,FG-06,0,IdentityAccess,FG-03,0,S,no,INT-023; ICD-12; BE-002,Authorize action / scope / relationship / assignment / state / sensitivity for every protected operation
+AuditActivity,FG-06,0,IntegrationMonitoring,FG-05,0,E,no,INT-024; INT-029; CSB-14A §13; EVT-024,"Adapter / runtime telemetry: invocation, sync run, queue, dead letter, reconciliation, audit-infrastructure signals · Audit infrastructure health / lag / integrity signals"
+AuditActivity,FG-06,0,MasterDataConfig,FG-04,0,S,no,INT-022; ICD-13; BE-004; CSB-14A §9,"ResolveConfiguration(configType, businessContext, effectiveDate); pin applied version"
+AuditActivity,FG-06,0,Notifications,WF-15,1,E,no,INT-018; ICD-09; BE-021; CSB-14A §11; EVT-024,Emit typed NotificationIntent after durable commit (FG-03 per CSB-FG-03 US-IAM-PFM-010/DM-011/LIA-006/007/EXT-007; FG-05 INT-025; FG-06 EVT-024; FG-02 EVT-019; WF-11/WF-12 per CSB-BP2 §11/§13) · AuditIntegrityFailure / AuditIndexRecovered
+IdentityAccess,FG-03,0,AuditActivity,FG-06,0,E,no,INT-026; ICD-15; BE-007; EVT-020,Publish durable typed AuditEvent for material business / admin / security actions · AccessGranted / AccessRevoked → authorization-cache invalidation; WF-11 inactive-assignee handling (CSB-FG-03 US-IAM-SYS-040)
+IdentityAccess,FG-03,0,IntegrationMonitoring,FG-05,0,E,no,INT-024; INT-029; CSB-14A §13; EVT-020,"Adapter / runtime telemetry: invocation, sync run, queue, dead letter, reconciliation, audit-infrastructure signals · AccessGranted / AccessRevoked → authorization-cache invalidation; WF-11 inactive-assignee handling (CSB-FG-03 US-IAM-SYS-040)"
+IdentityAccess,FG-03,0,MasterDataConfig,FG-04,0,E,no,EVT-020,AccessGranted / AccessRevoked → authorization-cache invalidation; WF-11 inactive-assignee handling (CSB-FG-03 US-IAM-SYS-040)
+IdentityAccess,FG-03,0,Approval,WF-11,1,E,no,EVT-020,AccessGranted / AccessRevoked → authorization-cache invalidation; WF-11 inactive-assignee handling (CSB-FG-03 US-IAM-SYS-040)
+IdentityAccess,FG-03,0,DocumentManagement,WF-12,1,E,no,EVT-020,AccessGranted / AccessRevoked → authorization-cache invalidation; WF-11 inactive-assignee handling (CSB-FG-03 US-IAM-SYS-040)
+IdentityAccess,FG-03,0,Notifications,WF-15,1,E,no,INT-018; ICD-09; BE-021; CSB-14A §11; EVT-020,Emit typed NotificationIntent after durable commit (FG-03 per CSB-FG-03 US-IAM-PFM-010/DM-011/LIA-006/007/EXT-007; FG-05 INT-025; FG-06 EVT-024; FG-02 EVT-019; WF-11/WF-12 per CSB-BP2 §11/§13) · AccessGranted / AccessRevoked → authorization-cache invalidation; WF-11 inactive-assignee handling (CSB-FG-03 US-IAM-SYS-040)
+IdentityAccess,FG-03,0,ChangeRequest,WF-08,2,E,no,EVT-020,AccessGranted / AccessRevoked → authorization-cache invalidation; WF-11 inactive-assignee handling (CSB-FG-03 US-IAM-SYS-040)
+IdentityAccess,FG-03,0,Closure,WF-10,2,E,no,EVT-020,AccessGranted / AccessRevoked → authorization-cache invalidation; WF-11 inactive-assignee handling (CSB-FG-03 US-IAM-SYS-040)
+IdentityAccess,FG-03,0,FinancialKpi,WF-14,2,E,no,EVT-020,AccessGranted / AccessRevoked → authorization-cache invalidation; WF-11 inactive-assignee handling (CSB-FG-03 US-IAM-SYS-040)
+IdentityAccess,FG-03,0,ManagementConcern,WF-07,2,E,no,EVT-020,AccessGranted / AccessRevoked → authorization-cache invalidation; WF-11 inactive-assignee handling (CSB-FG-03 US-IAM-SYS-040)
+IdentityAccess,FG-03,0,Milestone,WF-05,2,E,no,EVT-020,AccessGranted / AccessRevoked → authorization-cache invalidation; WF-11 inactive-assignee handling (CSB-FG-03 US-IAM-SYS-040)
+IdentityAccess,FG-03,0,Progress,WF-02,2,E,no,EVT-020,AccessGranted / AccessRevoked → authorization-cache invalidation; WF-11 inactive-assignee handling (CSB-FG-03 US-IAM-SYS-040)
+IdentityAccess,FG-03,0,Project,WF-01,2,E,no,EVT-020,AccessGranted / AccessRevoked → authorization-cache invalidation; WF-11 inactive-assignee handling (CSB-FG-03 US-IAM-SYS-040)
+IdentityAccess,FG-03,0,Risk,WF-06,2,E,no,EVT-020,AccessGranted / AccessRevoked → authorization-cache invalidation; WF-11 inactive-assignee handling (CSB-FG-03 US-IAM-SYS-040)
+IdentityAccess,FG-03,0,Schedule,WF-03,2,E,no,EVT-020,AccessGranted / AccessRevoked → authorization-cache invalidation; WF-11 inactive-assignee handling (CSB-FG-03 US-IAM-SYS-040)
+IdentityAccess,FG-03,0,Suspension,WF-09,2,E,no,EVT-020,AccessGranted / AccessRevoked → authorization-cache invalidation; WF-11 inactive-assignee handling (CSB-FG-03 US-IAM-SYS-040)
+IdentityAccess,FG-03,0,Task,WF-04,2,E,no,EVT-020,AccessGranted / AccessRevoked → authorization-cache invalidation; WF-11 inactive-assignee handling (CSB-FG-03 US-IAM-SYS-040)
+IdentityAccess,FG-03,0,ExternalParticipation,WF-13,3,E,no,EVT-020,AccessGranted / AccessRevoked → authorization-cache invalidation; WF-11 inactive-assignee handling (CSB-FG-03 US-IAM-SYS-040)
+IdentityAccess,FG-03,0,Dashboards,FG-01,4,E,no,EVT-020,AccessGranted / AccessRevoked → authorization-cache invalidation; WF-11 inactive-assignee handling (CSB-FG-03 US-IAM-SYS-040)
+IdentityAccess,FG-03,0,Reports,FG-02,4,E,no,EVT-020,AccessGranted / AccessRevoked → authorization-cache invalidation; WF-11 inactive-assignee handling (CSB-FG-03 US-IAM-SYS-040)
+IntegrationMonitoring,FG-05,0,AuditActivity,FG-06,0,E,no,INT-026; ICD-15; BE-007,Publish durable typed AuditEvent for material business / admin / security actions
+IntegrationMonitoring,FG-05,0,IdentityAccess,FG-03,0,S,no,INT-023; ICD-12; BE-002,Authorize action / scope / relationship / assignment / state / sensitivity for every protected operation
+IntegrationMonitoring,FG-05,0,MasterDataConfig,FG-04,0,S,no,INT-022; ICD-13; BE-004; CSB-14A §9,"ResolveConfiguration(configType, businessContext, effectiveDate); pin applied version"
+IntegrationMonitoring,FG-05,0,Notifications,WF-15,1,E,no,INT-018; ICD-09; BE-021; CSB-14A §11; INT-025; EVT-022; EVT-023,Emit typed NotificationIntent after durable commit (FG-03 per CSB-FG-03 US-IAM-PFM-010/DM-011/LIA-006/007/EXT-007; FG-05 INT-025; FG-06 EVT-024; FG-02 EVT-019; WF-11/WF-12 per CSB-BP2 §11/§13) · Operational alert / recovery / dead-letter intents
+IntegrationMonitoring,FG-05,0,Dashboards,FG-01,4,E,no,EVT-022,High-level integration health
+MasterDataConfig,FG-04,0,AuditActivity,FG-06,0,E,no,INT-026; ICD-15; BE-007; EVT-021,Publish durable typed AuditEvent for material business / admin / security actions · ConfigurationPublished / Activated → consumers refresh resolution cache; pinned versions unaffected
+MasterDataConfig,FG-04,0,IdentityAccess,FG-03,0,S,no,INT-023; ICD-12; BE-002,Authorize action / scope / relationship / assignment / state / sensitivity for every protected operation
+MasterDataConfig,FG-04,0,IntegrationMonitoring,FG-05,0,E,no,EVT-021,ConfigurationPublished / Activated (operational thresholds and health policy)
+MasterDataConfig,FG-04,0,Approval,WF-11,1,E,no,EVT-021,ConfigurationPublished / Activated → consumers refresh resolution cache; pinned versions unaffected
+MasterDataConfig,FG-04,0,DocumentManagement,WF-12,1,E,no,EVT-021,ConfigurationPublished / Activated → consumers refresh resolution cache; pinned versions unaffected
+MasterDataConfig,FG-04,0,Notifications,WF-15,1,E,no,EVT-021,ConfigurationPublished / Activated → consumers refresh resolution cache; pinned versions unaffected
+MasterDataConfig,FG-04,0,ChangeRequest,WF-08,2,E,no,EVT-021,ConfigurationPublished / Activated → consumers refresh resolution cache; pinned versions unaffected
+MasterDataConfig,FG-04,0,Closure,WF-10,2,E,no,EVT-021,ConfigurationPublished / Activated → consumers refresh resolution cache; pinned versions unaffected
+MasterDataConfig,FG-04,0,FinancialKpi,WF-14,2,E,no,EVT-021,ConfigurationPublished / Activated → consumers refresh resolution cache; pinned versions unaffected
+MasterDataConfig,FG-04,0,ManagementConcern,WF-07,2,E,no,EVT-021,ConfigurationPublished / Activated → consumers refresh resolution cache; pinned versions unaffected
+MasterDataConfig,FG-04,0,Milestone,WF-05,2,E,no,EVT-021,ConfigurationPublished / Activated → consumers refresh resolution cache; pinned versions unaffected
+MasterDataConfig,FG-04,0,Progress,WF-02,2,E,no,EVT-021,ConfigurationPublished / Activated → consumers refresh resolution cache; pinned versions unaffected
+MasterDataConfig,FG-04,0,Project,WF-01,2,E,no,EVT-021,ConfigurationPublished / Activated → consumers refresh resolution cache; pinned versions unaffected
+MasterDataConfig,FG-04,0,Risk,WF-06,2,E,no,EVT-021,ConfigurationPublished / Activated → consumers refresh resolution cache; pinned versions unaffected
+MasterDataConfig,FG-04,0,Schedule,WF-03,2,E,no,EVT-021,ConfigurationPublished / Activated → consumers refresh resolution cache; pinned versions unaffected
+MasterDataConfig,FG-04,0,Suspension,WF-09,2,E,no,EVT-021,ConfigurationPublished / Activated → consumers refresh resolution cache; pinned versions unaffected
+MasterDataConfig,FG-04,0,Task,WF-04,2,E,no,EVT-021,ConfigurationPublished / Activated → consumers refresh resolution cache; pinned versions unaffected
+MasterDataConfig,FG-04,0,ExternalParticipation,WF-13,3,E,no,EVT-021,ConfigurationPublished / Activated → consumers refresh resolution cache; pinned versions unaffected
+MasterDataConfig,FG-04,0,Dashboards,FG-01,4,E,no,EVT-021,ConfigurationPublished / Activated → consumers refresh resolution cache; pinned versions unaffected
+MasterDataConfig,FG-04,0,Reports,FG-02,4,E,no,EVT-021,ConfigurationPublished / Activated → consumers refresh resolution cache; pinned versions unaffected
+Approval,WF-11,1,AuditActivity,FG-06,0,E,no,INT-026; ICD-15; BE-007,Publish durable typed AuditEvent for material business / admin / security actions
+Approval,WF-11,1,IdentityAccess,FG-03,0,S,no,INT-023; ICD-12; BE-002,Authorize action / scope / relationship / assignment / state / sensitivity for every protected operation
+Approval,WF-11,1,MasterDataConfig,FG-04,0,S,no,INT-022; ICD-13; BE-004; CSB-14A §9,"ResolveConfiguration(configType, businessContext, effectiveDate); pin applied version"
+Approval,WF-11,1,Notifications,WF-15,1,E,no,INT-018; ICD-09; BE-021; CSB-14A §11; CSB-BP2 §11 (WF-15 supplies assignment / reminder / escalation / outcome delivery),"Emit typed NotificationIntent after durable commit (FG-03 per CSB-FG-03 US-IAM-PFM-010/DM-011/LIA-006/007/EXT-007; FG-05 INT-025; FG-06 EVT-024; FG-02 EVT-019; WF-11/WF-12 per CSB-BP2 §11/§13) · Assignment, reminder, escalation and outcome intents"
+Approval,WF-11,1,ChangeRequest,WF-08,2,C,no,INT-014; INT-008; EVT-012; BE-003; BE-006,Durable idempotent approve / reject / return callback; source performs its own transition
+Approval,WF-11,1,Closure,WF-10,2,C,no,INT-014; INT-008; EVT-012; BE-003; BE-006,Durable idempotent approve / reject / return callback; source performs its own transition
+Approval,WF-11,1,Project,WF-01,2,C,no,INT-014; INT-008; EVT-012; BE-003; BE-006,Durable idempotent approve / reject / return callback; source performs its own transition
+Approval,WF-11,1,Schedule,WF-03,2,C,no,INT-014; INT-008; EVT-012; BE-003; BE-006,Durable idempotent approve / reject / return callback; source performs its own transition
+Approval,WF-11,1,Suspension,WF-09,2,C,no,INT-014; INT-008; EVT-012; BE-003; BE-006,Durable idempotent approve / reject / return callback; source performs its own transition
+DocumentManagement,WF-12,1,AuditActivity,FG-06,0,E,no,INT-026; ICD-15; BE-007,Publish durable typed AuditEvent for material business / admin / security actions
+DocumentManagement,WF-12,1,IdentityAccess,FG-03,0,S,no,INT-023; ICD-12; BE-002,Authorize action / scope / relationship / assignment / state / sensitivity for every protected operation
+DocumentManagement,WF-12,1,IntegrationMonitoring,FG-05,0,E,no,INT-024; INT-029; CSB-14A §13,"Adapter / runtime telemetry: invocation, sync run, queue, dead letter, reconciliation, audit-infrastructure signals"
+DocumentManagement,WF-12,1,MasterDataConfig,FG-04,0,S,no,INT-022; ICD-13; BE-004; CSB-14A §9,"ResolveConfiguration(configType, businessContext, effectiveDate); pin applied version"
+DocumentManagement,WF-12,1,Notifications,WF-15,1,E,no,INT-018; ICD-09; BE-021; CSB-14A §11,Emit typed NotificationIntent after durable commit (FG-03 per CSB-FG-03 US-IAM-PFM-010/DM-011/LIA-006/007/EXT-007; FG-05 INT-025; FG-06 EVT-024; FG-02 EVT-019; WF-11/WF-12 per CSB-BP2 §11/§13)
+DocumentManagement,WF-12,1,ChangeRequest,WF-08,2,E,no,EVT-013,DocumentVersionClean / Quarantined; source decides evidence sufficiency
+DocumentManagement,WF-12,1,Closure,WF-10,2,E,no,EVT-013,DocumentVersionClean / Quarantined; source decides evidence sufficiency
+DocumentManagement,WF-12,1,FinancialKpi,WF-14,2,E,no,EVT-013,DocumentVersionClean / Quarantined; source decides evidence sufficiency
+DocumentManagement,WF-12,1,ManagementConcern,WF-07,2,E,no,EVT-013,DocumentVersionClean / Quarantined; source decides evidence sufficiency
+DocumentManagement,WF-12,1,Milestone,WF-05,2,E,no,EVT-013,DocumentVersionClean / Quarantined; source decides evidence sufficiency
+DocumentManagement,WF-12,1,Progress,WF-02,2,E,no,EVT-013,DocumentVersionClean / Quarantined; source decides evidence sufficiency
+DocumentManagement,WF-12,1,Project,WF-01,2,E,no,EVT-013,DocumentVersionClean / Quarantined; source decides evidence sufficiency
+DocumentManagement,WF-12,1,Risk,WF-06,2,E,no,EVT-013,DocumentVersionClean / Quarantined; source decides evidence sufficiency
+DocumentManagement,WF-12,1,Schedule,WF-03,2,E,no,EVT-013,DocumentVersionClean / Quarantined; source decides evidence sufficiency
+DocumentManagement,WF-12,1,Suspension,WF-09,2,E,no,EVT-013,DocumentVersionClean / Quarantined; source decides evidence sufficiency
+DocumentManagement,WF-12,1,Task,WF-04,2,E,no,EVT-013,DocumentVersionClean / Quarantined; source decides evidence sufficiency
+DocumentManagement,WF-12,1,ExternalParticipation,WF-13,3,E,no,EVT-013,DocumentVersionClean / Quarantined; source decides evidence sufficiency
+DocumentManagement,WF-12,1,Reports,FG-02,4,E,no,EVT-013,DocumentVersionClean / Quarantined; source decides evidence sufficiency
+Notifications,WF-15,1,AuditActivity,FG-06,0,E,no,INT-026; ICD-15; BE-007,Publish durable typed AuditEvent for material business / admin / security actions
+Notifications,WF-15,1,IdentityAccess,FG-03,0,S,no,INT-023; ICD-12; BE-002,Authorize action / scope / relationship / assignment / state / sensitivity for every protected operation
+Notifications,WF-15,1,IntegrationMonitoring,FG-05,0,E,no,INT-024; INT-029; CSB-14A §13,"Adapter / runtime telemetry: invocation, sync run, queue, dead letter, reconciliation, audit-infrastructure signals"
+Notifications,WF-15,1,MasterDataConfig,FG-04,0,S,no,INT-022; ICD-13; BE-004; CSB-14A §9,"ResolveConfiguration(configType, businessContext, effectiveDate); pin applied version"
+ChangeRequest,WF-08,2,AuditActivity,FG-06,0,E,no,INT-026; ICD-15; BE-007,Publish durable typed AuditEvent for material business / admin / security actions
+ChangeRequest,WF-08,2,IdentityAccess,FG-03,0,S,no,INT-023; ICD-12; BE-002,Authorize action / scope / relationship / assignment / state / sensitivity for every protected operation
+ChangeRequest,WF-08,2,MasterDataConfig,FG-04,0,S,no,INT-022; ICD-13; BE-004; CSB-14A §9,"ResolveConfiguration(configType, businessContext, effectiveDate); pin applied version"
+ChangeRequest,WF-08,2,Approval,WF-11,1,S,no,INT-013; INT-007; CSB-14A §8; BE-003,"Create approval instance for a frozen source revision (registration, baseline, change, suspension, completion / closure)"
+ChangeRequest,WF-08,2,DocumentManagement,WF-12,1,S,no,INT-015; INT-030; ICD-08; BE-018; CSB-14A §10,Create / link / pin exact CLEAN DocumentVersion as evidence; FG-02 promotes retained Report Snapshot
+ChangeRequest,WF-08,2,Notifications,WF-15,1,E,no,INT-018; ICD-09; BE-021; CSB-14A §11,Emit typed NotificationIntent after durable commit (FG-03 per CSB-FG-03 US-IAM-PFM-010/DM-011/LIA-006/007/EXT-007; FG-05 INT-025; FG-06 EVT-024; FG-02 EVT-019; WF-11/WF-12 per CSB-BP2 §11/§13)
+ChangeRequest,WF-08,2,FinancialKpi,WF-14,2,S,no,INT-010; BE-016; BE-020,Apply authorized budget / KPI target change
+ChangeRequest,WF-08,2,Project,WF-01,2,P,no,CSB-BP2 App D row 1; CSB-BP2 §9,"Read Project identity and lifecycle state; consumers reference, never clone"
+ChangeRequest,WF-08,2,Schedule,WF-03,2,S,no,INT-009; BE-012; BE-016,"Apply scoped, version-pinned ChangeAuthorization to rebaseline candidate"
+ChangeRequest,WF-08,2,Dashboards,FG-01,4,E,no,EVT-009,ChangeApproved / ChangeAuthorizationCreated
+ChangeRequest,WF-08,2,Reports,FG-02,4,E,no,EVT-009,ChangeApproved / ChangeAuthorizationCreated
+Closure,WF-10,2,AuditActivity,FG-06,0,E,no,INT-026; ICD-15; BE-007,Publish durable typed AuditEvent for material business / admin / security actions
+Closure,WF-10,2,IdentityAccess,FG-03,0,S,no,INT-023; ICD-12; BE-002,Authorize action / scope / relationship / assignment / state / sensitivity for every protected operation
+Closure,WF-10,2,MasterDataConfig,FG-04,0,S,no,INT-022; ICD-13; BE-004; CSB-14A §9,"ResolveConfiguration(configType, businessContext, effectiveDate); pin applied version"
+Closure,WF-10,2,Approval,WF-11,1,S,no,INT-013; INT-007; CSB-14A §8; BE-003,"Create approval instance for a frozen source revision (registration, baseline, change, suspension, completion / closure)"
+Closure,WF-10,2,DocumentManagement,WF-12,1,P,no,CSB-WF-10 §2.1 ownership matrix; CSB-BP2 App D (Completion / Closure case row),"Readiness / disposition gate projections (final report, reconciliation, dispositions, residuals, obligations, closeout completeness)"
+Closure,WF-10,2,DocumentManagement,WF-12,1,S,no,INT-015; INT-030; ICD-08; BE-018; CSB-14A §10,Create / link / pin exact CLEAN DocumentVersion as evidence; FG-02 promotes retained Report Snapshot
+Closure,WF-10,2,Notifications,WF-15,1,E,no,INT-018; ICD-09; BE-021; CSB-14A §11,Emit typed NotificationIntent after durable commit (FG-03 per CSB-FG-03 US-IAM-PFM-010/DM-011/LIA-006/007/EXT-007; FG-05 INT-025; FG-06 EVT-024; FG-02 EVT-019; WF-11/WF-12 per CSB-BP2 §11/§13)
+Closure,WF-10,2,ChangeRequest,WF-08,2,P,no,CSB-WF-10 §2.1 ownership matrix; CSB-BP2 App D (Completion / Closure case row),"Readiness / disposition gate projections (final report, reconciliation, dispositions, residuals, obligations, closeout completeness)"
+Closure,WF-10,2,FinancialKpi,WF-14,2,P,no,CSB-WF-10 §2.1 ownership matrix; CSB-BP2 App D (Completion / Closure case row),"Readiness / disposition gate projections (final report, reconciliation, dispositions, residuals, obligations, closeout completeness)"
+Closure,WF-10,2,ManagementConcern,WF-07,2,P,no,CSB-WF-10 §2.1 ownership matrix; CSB-BP2 App D (Completion / Closure case row),"Readiness / disposition gate projections (final report, reconciliation, dispositions, residuals, obligations, closeout completeness)"
+Closure,WF-10,2,Milestone,WF-05,2,P,no,CSB-WF-10 §2.1 ownership matrix; CSB-BP2 App D (Completion / Closure case row),"Readiness / disposition gate projections (final report, reconciliation, dispositions, residuals, obligations, closeout completeness)"
+Closure,WF-10,2,Progress,WF-02,2,P,no,CSB-WF-10 §2.1 ownership matrix; CSB-BP2 App D (Completion / Closure case row),"Readiness / disposition gate projections (final report, reconciliation, dispositions, residuals, obligations, closeout completeness)"
+Closure,WF-10,2,Project,WF-01,2,P,no,CSB-BP2 App D row 1; CSB-BP2 §9,"Read Project identity and lifecycle state; consumers reference, never clone"
+Closure,WF-10,2,Project,WF-01,2,S,no,INT-012; BE-017,Activate Completed / Closed; enforce terminal read-only behaviour
+Closure,WF-10,2,Risk,WF-06,2,P,no,CSB-WF-10 §2.1 ownership matrix; CSB-BP2 App D (Completion / Closure case row),"Readiness / disposition gate projections (final report, reconciliation, dispositions, residuals, obligations, closeout completeness)"
+Closure,WF-10,2,Schedule,WF-03,2,P,no,CSB-WF-10 §2.1 ownership matrix; CSB-BP2 App D (Completion / Closure case row),"Readiness / disposition gate projections (final report, reconciliation, dispositions, residuals, obligations, closeout completeness)"
+Closure,WF-10,2,Suspension,WF-09,2,P,no,CSB-WF-10 §2.1 ownership matrix; CSB-BP2 App D (Completion / Closure case row),"Readiness / disposition gate projections (final report, reconciliation, dispositions, residuals, obligations, closeout completeness)"
+Closure,WF-10,2,Task,WF-04,2,P,no,CSB-WF-10 §2.1 ownership matrix; CSB-BP2 App D (Completion / Closure case row),"Readiness / disposition gate projections (final report, reconciliation, dispositions, residuals, obligations, closeout completeness)"
+FinancialKpi,WF-14,2,AuditActivity,FG-06,0,E,no,INT-026; ICD-15; BE-007,Publish durable typed AuditEvent for material business / admin / security actions
+FinancialKpi,WF-14,2,IdentityAccess,FG-03,0,S,no,INT-023; ICD-12; BE-002,Authorize action / scope / relationship / assignment / state / sensitivity for every protected operation
+FinancialKpi,WF-14,2,IntegrationMonitoring,FG-05,0,E,no,INT-024; INT-029; CSB-14A §13,"Adapter / runtime telemetry: invocation, sync run, queue, dead letter, reconciliation, audit-infrastructure signals"
+FinancialKpi,WF-14,2,MasterDataConfig,FG-04,0,S,no,INT-022; ICD-13; BE-004; CSB-14A §9,"ResolveConfiguration(configType, businessContext, effectiveDate); pin applied version"
+FinancialKpi,WF-14,2,DocumentManagement,WF-12,1,S,no,INT-015; INT-030; ICD-08; BE-018; CSB-14A §10,Create / link / pin exact CLEAN DocumentVersion as evidence; FG-02 promotes retained Report Snapshot
+FinancialKpi,WF-14,2,Notifications,WF-15,1,E,no,INT-018; ICD-09; BE-021; CSB-14A §11,Emit typed NotificationIntent after durable commit (FG-03 per CSB-FG-03 US-IAM-PFM-010/DM-011/LIA-006/007/EXT-007; FG-05 INT-025; FG-06 EVT-024; FG-02 EVT-019; WF-11/WF-12 per CSB-BP2 §11/§13)
+FinancialKpi,WF-14,2,Progress,WF-02,2,E,no,EVT-016,FinancialSnapshotPublished / KPIMeasurementPublished
+FinancialKpi,WF-14,2,Project,WF-01,2,P,no,CSB-BP2 App D row 1; CSB-BP2 §9,"Read Project identity and lifecycle state; consumers reference, never clone"
+FinancialKpi,WF-14,2,Dashboards,FG-01,4,E,no,EVT-016,FinancialSnapshotPublished / KPIMeasurementPublished
+FinancialKpi,WF-14,2,Reports,FG-02,4,E,no,EVT-016,FinancialSnapshotPublished / KPIMeasurementPublished
+ManagementConcern,WF-07,2,AuditActivity,FG-06,0,E,no,INT-026; ICD-15; BE-007,Publish durable typed AuditEvent for material business / admin / security actions
+ManagementConcern,WF-07,2,IdentityAccess,FG-03,0,S,no,INT-023; ICD-12; BE-002,Authorize action / scope / relationship / assignment / state / sensitivity for every protected operation
+ManagementConcern,WF-07,2,MasterDataConfig,FG-04,0,S,no,INT-022; ICD-13; BE-004; CSB-14A §9,"ResolveConfiguration(configType, businessContext, effectiveDate); pin applied version"
+ManagementConcern,WF-07,2,DocumentManagement,WF-12,1,S,no,INT-015; INT-030; ICD-08; BE-018; CSB-14A §10,Create / link / pin exact CLEAN DocumentVersion as evidence; FG-02 promotes retained Report Snapshot
+ManagementConcern,WF-07,2,Notifications,WF-15,1,E,no,INT-018; ICD-09; BE-021; CSB-14A §11,Emit typed NotificationIntent after durable commit (FG-03 per CSB-FG-03 US-IAM-PFM-010/DM-011/LIA-006/007/EXT-007; FG-05 INT-025; FG-06 EVT-024; FG-02 EVT-019; WF-11/WF-12 per CSB-BP2 §11/§13)
+ManagementConcern,WF-07,2,ChangeRequest,WF-08,2,S,no,INT-006; EVT-008,Create / link Change Request where a controlled commitment change is required
+ManagementConcern,WF-07,2,Project,WF-01,2,P,no,CSB-BP2 App D row 1; CSB-BP2 §9,"Read Project identity and lifecycle state; consumers reference, never clone"
+ManagementConcern,WF-07,2,Task,WF-04,2,S,no,CSB-BP2 App D (Task / Subtask row),Link / create Tasks through the WF-04 typed contract
+Milestone,WF-05,2,AuditActivity,FG-06,0,E,no,INT-026; ICD-15; BE-007,Publish durable typed AuditEvent for material business / admin / security actions
+Milestone,WF-05,2,IdentityAccess,FG-03,0,S,no,INT-023; ICD-12; BE-002,Authorize action / scope / relationship / assignment / state / sensitivity for every protected operation
+Milestone,WF-05,2,MasterDataConfig,FG-04,0,S,no,INT-022; ICD-13; BE-004; CSB-14A §9,"ResolveConfiguration(configType, businessContext, effectiveDate); pin applied version"
+Milestone,WF-05,2,DocumentManagement,WF-12,1,S,no,INT-015; INT-030; ICD-08; BE-018; CSB-14A §10,Create / link / pin exact CLEAN DocumentVersion as evidence; FG-02 promotes retained Report Snapshot
+Milestone,WF-05,2,Notifications,WF-15,1,E,no,INT-018; ICD-09; BE-021; CSB-14A §11,Emit typed NotificationIntent after durable commit (FG-03 per CSB-FG-03 US-IAM-PFM-010/DM-011/LIA-006/007/EXT-007; FG-05 INT-025; FG-06 EVT-024; FG-02 EVT-019; WF-11/WF-12 per CSB-BP2 §11/§13)
+Milestone,WF-05,2,Progress,WF-02,2,E,no,INT-004; EVT-006,MilestoneAchievementAccepted (accepted Actual Achievement Date)
+Milestone,WF-05,2,Project,WF-01,2,P,no,CSB-BP2 App D row 1; CSB-BP2 §9,"Read Project identity and lifecycle state; consumers reference, never clone"
+Milestone,WF-05,2,Schedule,WF-03,2,E,no,INT-004; EVT-006,MilestoneAchievementAccepted (accepted Actual Achievement Date)
+Milestone,WF-05,2,Schedule,WF-03,2,P,no,ICD-04; BE-013,Read stable ProjectMilestone identity and planned dates (split authority)
+Milestone,WF-05,2,Task,WF-04,2,S,no,CSB-BP2 App D (Task / Subtask row),Link / create Tasks through the WF-04 typed contract
+Milestone,WF-05,2,Dashboards,FG-01,4,E,no,INT-004; EVT-006,MilestoneAchievementAccepted (accepted Actual Achievement Date)
+Milestone,WF-05,2,Reports,FG-02,4,E,no,INT-004; EVT-006,MilestoneAchievementAccepted (accepted Actual Achievement Date)
+Progress,WF-02,2,AuditActivity,FG-06,0,E,no,INT-026; ICD-15; BE-007,Publish durable typed AuditEvent for material business / admin / security actions
+Progress,WF-02,2,IdentityAccess,FG-03,0,S,no,INT-023; ICD-12; BE-002,Authorize action / scope / relationship / assignment / state / sensitivity for every protected operation
+Progress,WF-02,2,MasterDataConfig,FG-04,0,S,no,INT-022; ICD-13; BE-004; CSB-14A §9,"ResolveConfiguration(configType, businessContext, effectiveDate); pin applied version"
+Progress,WF-02,2,DocumentManagement,WF-12,1,S,no,INT-015; INT-030; ICD-08; BE-018; CSB-14A §10,Create / link / pin exact CLEAN DocumentVersion as evidence; FG-02 promotes retained Report Snapshot
+Progress,WF-02,2,Notifications,WF-15,1,E,no,INT-018; ICD-09; BE-021; CSB-14A §11,Emit typed NotificationIntent after durable commit (FG-03 per CSB-FG-03 US-IAM-PFM-010/DM-011/LIA-006/007/EXT-007; FG-05 INT-025; FG-06 EVT-024; FG-02 EVT-019; WF-11/WF-12 per CSB-BP2 §11/§13)
+Progress,WF-02,2,Closure,WF-10,2,E,no,EVT-003,"ProgressPublished (official snapshot, period / version / as-of)"
+Progress,WF-02,2,FinancialKpi,WF-14,2,P,no,INT-017; EVT-016; BE-014,Current / published financial and KPI projections pinned by source version and as-of at reporting cut-off
+Progress,WF-02,2,ManagementConcern,WF-07,2,P,no,CSB-WF-02 §9.23 / §9.24 dependency tables (read via ICD-01 renumbering); BE-014,"Planned progress, physical-progress weighting, schedule health, task / milestone statistics, risk and concern summaries at reporting cut-off"
+Progress,WF-02,2,Milestone,WF-05,2,P,no,CSB-WF-02 §9.23 / §9.24 dependency tables (read via ICD-01 renumbering); BE-014,"Planned progress, physical-progress weighting, schedule health, task / milestone statistics, risk and concern summaries at reporting cut-off"
+Progress,WF-02,2,Project,WF-01,2,P,no,CSB-BP2 App D row 1; CSB-BP2 §9,"Read Project identity and lifecycle state; consumers reference, never clone"
+Progress,WF-02,2,Risk,WF-06,2,P,no,CSB-WF-02 §9.23 / §9.24 dependency tables (read via ICD-01 renumbering); BE-014,"Planned progress, physical-progress weighting, schedule health, task / milestone statistics, risk and concern summaries at reporting cut-off"
+Progress,WF-02,2,Schedule,WF-03,2,P,no,CSB-WF-02 §9.23 / §9.24 dependency tables (read via ICD-01 renumbering); BE-014,"Planned progress, physical-progress weighting, schedule health, task / milestone statistics, risk and concern summaries at reporting cut-off"
+Progress,WF-02,2,Task,WF-04,2,P,no,CSB-WF-02 §9.23 / §9.24 dependency tables (read via ICD-01 renumbering); BE-014,"Planned progress, physical-progress weighting, schedule health, task / milestone statistics, risk and concern summaries at reporting cut-off"
+Progress,WF-02,2,Dashboards,FG-01,4,E,no,EVT-003,"ProgressPublished (official snapshot, period / version / as-of)"
+Progress,WF-02,2,Reports,FG-02,4,E,no,EVT-003,"ProgressPublished (official snapshot, period / version / as-of)"
+Project,WF-01,2,AuditActivity,FG-06,0,E,no,INT-026; ICD-15; BE-007,Publish durable typed AuditEvent for material business / admin / security actions
+Project,WF-01,2,IdentityAccess,FG-03,0,S,no,INT-023; ICD-12; BE-002,Authorize action / scope / relationship / assignment / state / sensitivity for every protected operation
+Project,WF-01,2,MasterDataConfig,FG-04,0,S,no,INT-022; ICD-13; BE-004; CSB-14A §9,"ResolveConfiguration(configType, businessContext, effectiveDate); pin applied version"
+Project,WF-01,2,Approval,WF-11,1,S,no,INT-013; INT-007; CSB-14A §8; BE-003,"Create approval instance for a frozen source revision (registration, baseline, change, suspension, completion / closure)"
+Project,WF-01,2,DocumentManagement,WF-12,1,S,no,INT-015; INT-030; ICD-08; BE-018; CSB-14A §10,Create / link / pin exact CLEAN DocumentVersion as evidence; FG-02 promotes retained Report Snapshot
+Project,WF-01,2,Notifications,WF-15,1,E,no,INT-018; ICD-09; BE-021; CSB-14A §11,Emit typed NotificationIntent after durable commit (FG-03 per CSB-FG-03 US-IAM-PFM-010/DM-011/LIA-006/007/EXT-007; FG-05 INT-025; FG-06 EVT-024; FG-02 EVT-019; WF-11/WF-12 per CSB-BP2 §11/§13)
+Project,WF-01,2,ChangeRequest,WF-08,2,E,no,EVT-001; EVT-002; EVT-010; EVT-011,ProjectRegistered / ProjectApproved / ProjectActivated · ProjectSuspended / ProjectResumed / ProjectCompleted / ProjectClosed — emitted by the Project master after the WF-09 / WF-10 command succeeds; each domain applies its own suspended / terminal behaviour
+Project,WF-01,2,Closure,WF-10,2,E,no,EVT-001; EVT-002; EVT-010; EVT-011,ProjectRegistered / ProjectApproved / ProjectActivated · ProjectSuspended / ProjectResumed / ProjectCompleted / ProjectClosed — emitted by the Project master after the WF-09 / WF-10 command succeeds; each domain applies its own suspended / terminal behaviour
+Project,WF-01,2,FinancialKpi,WF-14,2,E,no,EVT-001; EVT-002; EVT-010; EVT-011,ProjectRegistered / ProjectApproved / ProjectActivated · ProjectSuspended / ProjectResumed / ProjectCompleted / ProjectClosed — emitted by the Project master after the WF-09 / WF-10 command succeeds; each domain applies its own suspended / terminal behaviour
+Project,WF-01,2,ManagementConcern,WF-07,2,E,no,EVT-001; EVT-002; EVT-010; EVT-011,ProjectRegistered / ProjectApproved / ProjectActivated · ProjectSuspended / ProjectResumed / ProjectCompleted / ProjectClosed — emitted by the Project master after the WF-09 / WF-10 command succeeds; each domain applies its own suspended / terminal behaviour
+Project,WF-01,2,Milestone,WF-05,2,E,no,EVT-001; EVT-002; EVT-010; EVT-011,ProjectRegistered / ProjectApproved / ProjectActivated · ProjectSuspended / ProjectResumed / ProjectCompleted / ProjectClosed — emitted by the Project master after the WF-09 / WF-10 command succeeds; each domain applies its own suspended / terminal behaviour
+Project,WF-01,2,Progress,WF-02,2,E,no,EVT-001; EVT-002; EVT-010; EVT-011,ProjectRegistered / ProjectApproved / ProjectActivated · ProjectSuspended / ProjectResumed / ProjectCompleted / ProjectClosed — emitted by the Project master after the WF-09 / WF-10 command succeeds; each domain applies its own suspended / terminal behaviour
+Project,WF-01,2,Risk,WF-06,2,E,no,EVT-001; EVT-002; EVT-010; EVT-011,ProjectRegistered / ProjectApproved / ProjectActivated · ProjectSuspended / ProjectResumed / ProjectCompleted / ProjectClosed — emitted by the Project master after the WF-09 / WF-10 command succeeds; each domain applies its own suspended / terminal behaviour
+Project,WF-01,2,Schedule,WF-03,2,E,no,EVT-001; EVT-002; EVT-010; EVT-011,ProjectRegistered / ProjectApproved / ProjectActivated · ProjectSuspended / ProjectResumed / ProjectCompleted / ProjectClosed — emitted by the Project master after the WF-09 / WF-10 command succeeds; each domain applies its own suspended / terminal behaviour
+Project,WF-01,2,Schedule,WF-03,2,P,no,INT-001; ICD-02; BE-011,Activation readiness (baseline / schedule) read at Planned→Active command
+Project,WF-01,2,Suspension,WF-09,2,E,no,EVT-001; EVT-002; EVT-010; EVT-011,ProjectRegistered / ProjectApproved / ProjectActivated · ProjectSuspended / ProjectResumed / ProjectCompleted / ProjectClosed — emitted by the Project master after the WF-09 / WF-10 command succeeds; each domain applies its own suspended / terminal behaviour
+Project,WF-01,2,Task,WF-04,2,E,no,EVT-001; EVT-002; EVT-010; EVT-011,ProjectRegistered / ProjectApproved / ProjectActivated · ProjectSuspended / ProjectResumed / ProjectCompleted / ProjectClosed — emitted by the Project master after the WF-09 / WF-10 command succeeds; each domain applies its own suspended / terminal behaviour
+Project,WF-01,2,Dashboards,FG-01,4,E,no,EVT-001; EVT-002; EVT-010; EVT-011,ProjectRegistered / ProjectApproved / ProjectActivated · ProjectSuspended / ProjectResumed / ProjectCompleted / ProjectClosed — emitted by the Project master after the WF-09 / WF-10 command succeeds; each domain applies its own suspended / terminal behaviour
+Project,WF-01,2,Reports,FG-02,4,E,no,EVT-001; EVT-002; EVT-010; EVT-011,ProjectRegistered / ProjectApproved / ProjectActivated · ProjectSuspended / ProjectResumed / ProjectCompleted / ProjectClosed — emitted by the Project master after the WF-09 / WF-10 command succeeds; each domain applies its own suspended / terminal behaviour
+Risk,WF-06,2,AuditActivity,FG-06,0,E,no,INT-026; ICD-15; BE-007,Publish durable typed AuditEvent for material business / admin / security actions
+Risk,WF-06,2,IdentityAccess,FG-03,0,S,no,INT-023; ICD-12; BE-002,Authorize action / scope / relationship / assignment / state / sensitivity for every protected operation
+Risk,WF-06,2,MasterDataConfig,FG-04,0,S,no,INT-022; ICD-13; BE-004; CSB-14A §9,"ResolveConfiguration(configType, businessContext, effectiveDate); pin applied version"
+Risk,WF-06,2,DocumentManagement,WF-12,1,S,no,INT-015; INT-030; ICD-08; BE-018; CSB-14A §10,Create / link / pin exact CLEAN DocumentVersion as evidence; FG-02 promotes retained Report Snapshot
+Risk,WF-06,2,Notifications,WF-15,1,E,no,INT-018; ICD-09; BE-021; CSB-14A §11,Emit typed NotificationIntent after durable commit (FG-03 per CSB-FG-03 US-IAM-PFM-010/DM-011/LIA-006/007/EXT-007; FG-05 INT-025; FG-06 EVT-024; FG-02 EVT-019; WF-11/WF-12 per CSB-BP2 §11/§13)
+Risk,WF-06,2,ChangeRequest,WF-08,2,S,no,INT-006; EVT-008,Create / link Change Request where a controlled commitment change is required
+Risk,WF-06,2,ManagementConcern,WF-07,2,S,no,INT-005; EVT-007; BE-015,Materialize realized Risk into linked Issue (idempotent; pending-link state on partial failure)
+Risk,WF-06,2,Project,WF-01,2,P,no,CSB-BP2 App D row 1; CSB-BP2 §9,"Read Project identity and lifecycle state; consumers reference, never clone"
+Risk,WF-06,2,Task,WF-04,2,S,no,CSB-BP2 App D (Task / Subtask row),Link / create Tasks through the WF-04 typed contract
+Schedule,WF-03,2,AuditActivity,FG-06,0,E,no,INT-026; ICD-15; BE-007,Publish durable typed AuditEvent for material business / admin / security actions
+Schedule,WF-03,2,IdentityAccess,FG-03,0,S,no,INT-023; ICD-12; BE-002,Authorize action / scope / relationship / assignment / state / sensitivity for every protected operation
+Schedule,WF-03,2,MasterDataConfig,FG-04,0,S,no,INT-022; ICD-13; BE-004; CSB-14A §9,"ResolveConfiguration(configType, businessContext, effectiveDate); pin applied version"
+Schedule,WF-03,2,Approval,WF-11,1,S,no,INT-013; INT-007; CSB-14A §8; BE-003,"Create approval instance for a frozen source revision (registration, baseline, change, suspension, completion / closure)"
+Schedule,WF-03,2,DocumentManagement,WF-12,1,S,no,INT-015; INT-030; ICD-08; BE-018; CSB-14A §10,Create / link / pin exact CLEAN DocumentVersion as evidence; FG-02 promotes retained Report Snapshot
+Schedule,WF-03,2,Notifications,WF-15,1,E,no,INT-018; ICD-09; BE-021; CSB-14A §11,Emit typed NotificationIntent after durable commit (FG-03 per CSB-FG-03 US-IAM-PFM-010/DM-011/LIA-006/007/EXT-007; FG-05 INT-025; FG-06 EVT-024; FG-02 EVT-019; WF-11/WF-12 per CSB-BP2 §11/§13)
+Schedule,WF-03,2,Progress,WF-02,2,E,no,EVT-004,BaselineActivated / RebaselineActivated
+Schedule,WF-03,2,Project,WF-01,2,P,no,CSB-BP2 App D row 1; CSB-BP2 §9,"Read Project identity and lifecycle state; consumers reference, never clone"
+Schedule,WF-03,2,Task,WF-04,2,P,no,INT-003,Activity Execution Progress from linked Tasks; WF-03 never recalculates Tasks
+Schedule,WF-03,2,Task,WF-04,2,S,no,CSB-BP2 App D (Task / Subtask row),Link / create Tasks through the WF-04 typed contract
+Schedule,WF-03,2,Dashboards,FG-01,4,E,no,EVT-004,BaselineActivated / RebaselineActivated
+Schedule,WF-03,2,Reports,FG-02,4,E,no,EVT-004,BaselineActivated / RebaselineActivated
+Suspension,WF-09,2,AuditActivity,FG-06,0,E,no,INT-026; ICD-15; BE-007,Publish durable typed AuditEvent for material business / admin / security actions
+Suspension,WF-09,2,IdentityAccess,FG-03,0,S,no,INT-023; ICD-12; BE-002,Authorize action / scope / relationship / assignment / state / sensitivity for every protected operation
+Suspension,WF-09,2,MasterDataConfig,FG-04,0,S,no,INT-022; ICD-13; BE-004; CSB-14A §9,"ResolveConfiguration(configType, businessContext, effectiveDate); pin applied version"
+Suspension,WF-09,2,Approval,WF-11,1,S,no,INT-013; INT-007; CSB-14A §8; BE-003,"Create approval instance for a frozen source revision (registration, baseline, change, suspension, completion / closure)"
+Suspension,WF-09,2,DocumentManagement,WF-12,1,S,no,INT-015; INT-030; ICD-08; BE-018; CSB-14A §10,Create / link / pin exact CLEAN DocumentVersion as evidence; FG-02 promotes retained Report Snapshot
+Suspension,WF-09,2,Notifications,WF-15,1,E,no,INT-018; ICD-09; BE-021; CSB-14A §11,Emit typed NotificationIntent after durable commit (FG-03 per CSB-FG-03 US-IAM-PFM-010/DM-011/LIA-006/007/EXT-007; FG-05 INT-025; FG-06 EVT-024; FG-02 EVT-019; WF-11/WF-12 per CSB-BP2 §11/§13)
+Suspension,WF-09,2,ChangeRequest,WF-08,2,P,no,CSB-WF-09 §2 domain table,Capability signals and readiness references for the Resumption readiness snapshot
+Suspension,WF-09,2,Closure,WF-10,2,S,no,CSB-WF-09 §2 (Closure row); CSB-WF-10 §2.1 (WF-09 row),Refer a non-resuming Project for terminal disposition
+Suspension,WF-09,2,FinancialKpi,WF-14,2,P,no,CSB-WF-09 §2 domain table,Capability signals and readiness references for the Resumption readiness snapshot
+Suspension,WF-09,2,Milestone,WF-05,2,P,no,CSB-WF-09 §2 domain table,Capability signals and readiness references for the Resumption readiness snapshot
+Suspension,WF-09,2,Progress,WF-02,2,P,no,CSB-WF-09 §2 domain table,Capability signals and readiness references for the Resumption readiness snapshot
+Suspension,WF-09,2,Project,WF-01,2,P,no,CSB-BP2 App D row 1; CSB-BP2 §9,"Read Project identity and lifecycle state; consumers reference, never clone"
+Suspension,WF-09,2,Project,WF-01,2,S,no,INT-011; BE-017,Activate Suspension / Resumption on the Project master lifecycle (max one ActiveSuspension)
+Suspension,WF-09,2,Schedule,WF-03,2,P,no,CSB-WF-09 §2 domain table,Capability signals and readiness references for the Resumption readiness snapshot
+Suspension,WF-09,2,Task,WF-04,2,P,no,CSB-WF-09 §2 domain table,Capability signals and readiness references for the Resumption readiness snapshot
+Task,WF-04,2,AuditActivity,FG-06,0,E,no,INT-026; ICD-15; BE-007,Publish durable typed AuditEvent for material business / admin / security actions
+Task,WF-04,2,IdentityAccess,FG-03,0,S,no,INT-023; ICD-12; BE-002,Authorize action / scope / relationship / assignment / state / sensitivity for every protected operation
+Task,WF-04,2,MasterDataConfig,FG-04,0,S,no,INT-022; ICD-13; BE-004; CSB-14A §9,"ResolveConfiguration(configType, businessContext, effectiveDate); pin applied version"
+Task,WF-04,2,DocumentManagement,WF-12,1,S,no,INT-015; INT-030; ICD-08; BE-018; CSB-14A §10,Create / link / pin exact CLEAN DocumentVersion as evidence; FG-02 promotes retained Report Snapshot
+Task,WF-04,2,Notifications,WF-15,1,E,no,INT-018; ICD-09; BE-021; CSB-14A §11,Emit typed NotificationIntent after durable commit (FG-03 per CSB-FG-03 US-IAM-PFM-010/DM-011/LIA-006/007/EXT-007; FG-05 INT-025; FG-06 EVT-024; FG-02 EVT-019; WF-11/WF-12 per CSB-BP2 §11/§13)
+Task,WF-04,2,Project,WF-01,2,P,no,CSB-BP2 App D row 1; CSB-BP2 §9,"Read Project identity and lifecycle state; consumers reference, never clone"
+Task,WF-04,2,Schedule,WF-03,2,E,no,EVT-005,TaskStatusChanged / TaskCompleted → WF-03 projection refresh
+Task,WF-04,2,Schedule,WF-03,2,P,no,CSB-BP2 App D (ProjectSchedule row: WF-04 links execution Tasks),Read Schedule Activity identity for Task linkage
+ExternalParticipation,WF-13,3,AuditActivity,FG-06,0,E,no,INT-026; ICD-15; BE-007,Publish durable typed AuditEvent for material business / admin / security actions
+ExternalParticipation,WF-13,3,IdentityAccess,FG-03,0,S,no,INT-023; ICD-12; BE-002,Authorize action / scope / relationship / assignment / state / sensitivity for every protected operation
+ExternalParticipation,WF-13,3,IntegrationMonitoring,FG-05,0,E,no,INT-024; INT-029; CSB-14A §13,"Adapter / runtime telemetry: invocation, sync run, queue, dead letter, reconciliation, audit-infrastructure signals"
+ExternalParticipation,WF-13,3,MasterDataConfig,FG-04,0,S,no,INT-022; ICD-13; BE-004; CSB-14A §9,"ResolveConfiguration(configType, businessContext, effectiveDate); pin applied version"
+ExternalParticipation,WF-13,3,DocumentManagement,WF-12,1,S,no,INT-015; INT-030; ICD-08; BE-018; CSB-14A §10,Create / link / pin exact CLEAN DocumentVersion as evidence; FG-02 promotes retained Report Snapshot
+ExternalParticipation,WF-13,3,Notifications,WF-15,1,E,no,INT-018; ICD-09; BE-021; CSB-14A §11,Emit typed NotificationIntent after durable commit (FG-03 per CSB-FG-03 US-IAM-PFM-010/DM-011/LIA-006/007/EXT-007; FG-05 INT-025; FG-06 EVT-024; FG-02 EVT-019; WF-11/WF-12 per CSB-BP2 §11/§13)
+ExternalParticipation,WF-13,3,ChangeRequest,WF-08,2,S,no,INT-016; ICD-07; EVT-014; EVT-015; BE-019,Apply accepted External Contribution through the target domain's allowlisted typed adapter; acknowledgment required before Applied
+ExternalParticipation,WF-13,3,Closure,WF-10,2,S,no,INT-016; ICD-07; EVT-014; EVT-015; BE-019,Apply accepted External Contribution through the target domain's allowlisted typed adapter; acknowledgment required before Applied
+ExternalParticipation,WF-13,3,FinancialKpi,WF-14,2,S,no,INT-016; ICD-07; EVT-014; EVT-015; BE-019,Apply accepted External Contribution through the target domain's allowlisted typed adapter; acknowledgment required before Applied
+ExternalParticipation,WF-13,3,ManagementConcern,WF-07,2,S,no,INT-016; ICD-07; EVT-014; EVT-015; BE-019,Apply accepted External Contribution through the target domain's allowlisted typed adapter; acknowledgment required before Applied
+ExternalParticipation,WF-13,3,Milestone,WF-05,2,S,no,INT-016; ICD-07; EVT-014; EVT-015; BE-019,Apply accepted External Contribution through the target domain's allowlisted typed adapter; acknowledgment required before Applied
+ExternalParticipation,WF-13,3,Progress,WF-02,2,S,no,INT-016; ICD-07; EVT-014; EVT-015; BE-019,Apply accepted External Contribution through the target domain's allowlisted typed adapter; acknowledgment required before Applied
+ExternalParticipation,WF-13,3,Project,WF-01,2,P,no,CSB-BP2 App D row 1; CSB-BP2 §9,"Read Project identity and lifecycle state; consumers reference, never clone"
+ExternalParticipation,WF-13,3,Project,WF-01,2,S,no,INT-016; ICD-07; EVT-014; EVT-015; BE-019,Apply accepted External Contribution through the target domain's allowlisted typed adapter; acknowledgment required before Applied
+ExternalParticipation,WF-13,3,Risk,WF-06,2,S,no,INT-016; ICD-07; EVT-014; EVT-015; BE-019,Apply accepted External Contribution through the target domain's allowlisted typed adapter; acknowledgment required before Applied
+ExternalParticipation,WF-13,3,Schedule,WF-03,2,S,no,INT-016; ICD-07; EVT-014; EVT-015; BE-019,Apply accepted External Contribution through the target domain's allowlisted typed adapter; acknowledgment required before Applied
+ExternalParticipation,WF-13,3,Suspension,WF-09,2,S,no,INT-016; ICD-07; EVT-014; EVT-015; BE-019,Apply accepted External Contribution through the target domain's allowlisted typed adapter; acknowledgment required before Applied
+ExternalParticipation,WF-13,3,Task,WF-04,2,S,no,INT-016; ICD-07; EVT-014; EVT-015; BE-019,Apply accepted External Contribution through the target domain's allowlisted typed adapter; acknowledgment required before Applied
+ExternalParticipation,WF-13,3,Dashboards,FG-01,4,E,no,EVT-015,ExternalContributionApplied lineage
+ExternalParticipation,WF-13,3,Reports,FG-02,4,E,no,EVT-015,ExternalContributionApplied lineage
+Dashboards,FG-01,4,AuditActivity,FG-06,0,E,no,INT-026; ICD-15; BE-007; EVT-018; EVT-019,Publish durable typed AuditEvent for material business / admin / security actions · DashboardDefinitionPublished / ReportDefinitionPublished / ExportCompleted
+Dashboards,FG-01,4,IdentityAccess,FG-03,0,S,no,INT-023; ICD-12; BE-002,Authorize action / scope / relationship / assignment / state / sensitivity for every protected operation
+Dashboards,FG-01,4,IntegrationMonitoring,FG-05,0,E,no,INT-024; INT-029; CSB-14A §13,"Adapter / runtime telemetry: invocation, sync run, queue, dead letter, reconciliation, audit-infrastructure signals"
+Dashboards,FG-01,4,IntegrationMonitoring,FG-05,0,P,no,INT-019; INT-020; ICD-10; ICD-11; BE-010; BE-022; BPK-013,"Governed projections with semantic state, as-of, freshness, coverage and sensitivity; no raw table querying"
+Dashboards,FG-01,4,MasterDataConfig,FG-04,0,S,no,INT-022; ICD-13; BE-004; CSB-14A §9,"ResolveConfiguration(configType, businessContext, effectiveDate); pin applied version"
+Dashboards,FG-01,4,Approval,WF-11,1,P,no,INT-019; INT-020; ICD-10; ICD-11; BE-010; BE-022; BPK-013,"Governed projections with semantic state, as-of, freshness, coverage and sensitivity; no raw table querying"
+Dashboards,FG-01,4,ChangeRequest,WF-08,2,P,no,INT-019; INT-020; ICD-10; ICD-11; BE-010; BE-022; BPK-013,"Governed projections with semantic state, as-of, freshness, coverage and sensitivity; no raw table querying"
+Dashboards,FG-01,4,Closure,WF-10,2,P,no,INT-019; INT-020; ICD-10; ICD-11; BE-010; BE-022; BPK-013,"Governed projections with semantic state, as-of, freshness, coverage and sensitivity; no raw table querying"
+Dashboards,FG-01,4,FinancialKpi,WF-14,2,P,no,INT-019; INT-020; ICD-10; ICD-11; BE-010; BE-022; BPK-013,"Governed projections with semantic state, as-of, freshness, coverage and sensitivity; no raw table querying"
+Dashboards,FG-01,4,ManagementConcern,WF-07,2,P,no,INT-019; INT-020; ICD-10; ICD-11; BE-010; BE-022; BPK-013,"Governed projections with semantic state, as-of, freshness, coverage and sensitivity; no raw table querying"
+Dashboards,FG-01,4,Milestone,WF-05,2,P,no,INT-019; INT-020; ICD-10; ICD-11; BE-010; BE-022; BPK-013,"Governed projections with semantic state, as-of, freshness, coverage and sensitivity; no raw table querying"
+Dashboards,FG-01,4,Progress,WF-02,2,P,no,INT-019; INT-020; ICD-10; ICD-11; BE-010; BE-022; BPK-013,"Governed projections with semantic state, as-of, freshness, coverage and sensitivity; no raw table querying"
+Dashboards,FG-01,4,Project,WF-01,2,P,no,CSB-BP2 App D row 1; CSB-BP2 §9; INT-019; INT-020; ICD-10; ICD-11; BE-010; BE-022; BPK-013,"Read Project identity and lifecycle state; consumers reference, never clone · Governed projections with semantic state, as-of, freshness, coverage and sensitivity; no raw table querying"
+Dashboards,FG-01,4,Risk,WF-06,2,P,no,INT-019; INT-020; ICD-10; ICD-11; BE-010; BE-022; BPK-013,"Governed projections with semantic state, as-of, freshness, coverage and sensitivity; no raw table querying"
+Dashboards,FG-01,4,Schedule,WF-03,2,P,no,INT-019; INT-020; ICD-10; ICD-11; BE-010; BE-022; BPK-013,"Governed projections with semantic state, as-of, freshness, coverage and sensitivity; no raw table querying"
+Dashboards,FG-01,4,Suspension,WF-09,2,P,no,INT-019; INT-020; ICD-10; ICD-11; BE-010; BE-022; BPK-013,"Governed projections with semantic state, as-of, freshness, coverage and sensitivity; no raw table querying"
+Dashboards,FG-01,4,Task,WF-04,2,P,no,INT-019; INT-020; ICD-10; ICD-11; BE-010; BE-022; BPK-013,"Governed projections with semantic state, as-of, freshness, coverage and sensitivity; no raw table querying"
+Dashboards,FG-01,4,ExternalParticipation,WF-13,3,P,no,INT-019; INT-020; ICD-10; ICD-11; BE-010; BE-022; BPK-013,"Governed projections with semantic state, as-of, freshness, coverage and sensitivity; no raw table querying"
+Reports,FG-02,4,AuditActivity,FG-06,0,E,no,INT-026; ICD-15; BE-007; EVT-018; EVT-019,Publish durable typed AuditEvent for material business / admin / security actions · DashboardDefinitionPublished / ReportDefinitionPublished / ExportCompleted
+Reports,FG-02,4,AuditActivity,FG-06,0,P,no,INT-027; BE-024,Authorized formal Audit export dataset (same or stricter redaction)
+Reports,FG-02,4,IdentityAccess,FG-03,0,S,no,INT-023; ICD-12; BE-002,Authorize action / scope / relationship / assignment / state / sensitivity for every protected operation
+Reports,FG-02,4,IntegrationMonitoring,FG-05,0,E,no,INT-024; INT-029; CSB-14A §13,"Adapter / runtime telemetry: invocation, sync run, queue, dead letter, reconciliation, audit-infrastructure signals"
+Reports,FG-02,4,IntegrationMonitoring,FG-05,0,P,no,INT-019; INT-020; ICD-10; ICD-11; BE-010; BE-022; BPK-013,"Governed projections with semantic state, as-of, freshness, coverage and sensitivity; no raw table querying"
+Reports,FG-02,4,MasterDataConfig,FG-04,0,S,no,INT-022; ICD-13; BE-004; CSB-14A §9,"ResolveConfiguration(configType, businessContext, effectiveDate); pin applied version"
+Reports,FG-02,4,Approval,WF-11,1,P,no,INT-019; INT-020; ICD-10; ICD-11; BE-010; BE-022; BPK-013,"Governed projections with semantic state, as-of, freshness, coverage and sensitivity; no raw table querying"
+Reports,FG-02,4,DocumentManagement,WF-12,1,S,no,INT-015; INT-030; ICD-08; BE-018; CSB-14A §10,Create / link / pin exact CLEAN DocumentVersion as evidence; FG-02 promotes retained Report Snapshot
+Reports,FG-02,4,Notifications,WF-15,1,E,no,INT-018; ICD-09; BE-021; CSB-14A §11,Emit typed NotificationIntent after durable commit (FG-03 per CSB-FG-03 US-IAM-PFM-010/DM-011/LIA-006/007/EXT-007; FG-05 INT-025; FG-06 EVT-024; FG-02 EVT-019; WF-11/WF-12 per CSB-BP2 §11/§13)
+Reports,FG-02,4,ChangeRequest,WF-08,2,P,no,INT-019; INT-020; ICD-10; ICD-11; BE-010; BE-022; BPK-013,"Governed projections with semantic state, as-of, freshness, coverage and sensitivity; no raw table querying"
+Reports,FG-02,4,Closure,WF-10,2,P,no,INT-019; INT-020; ICD-10; ICD-11; BE-010; BE-022; BPK-013,"Governed projections with semantic state, as-of, freshness, coverage and sensitivity; no raw table querying"
+Reports,FG-02,4,FinancialKpi,WF-14,2,P,no,INT-019; INT-020; ICD-10; ICD-11; BE-010; BE-022; BPK-013,"Governed projections with semantic state, as-of, freshness, coverage and sensitivity; no raw table querying"
+Reports,FG-02,4,ManagementConcern,WF-07,2,P,no,INT-019; INT-020; ICD-10; ICD-11; BE-010; BE-022; BPK-013,"Governed projections with semantic state, as-of, freshness, coverage and sensitivity; no raw table querying"
+Reports,FG-02,4,Milestone,WF-05,2,P,no,INT-019; INT-020; ICD-10; ICD-11; BE-010; BE-022; BPK-013,"Governed projections with semantic state, as-of, freshness, coverage and sensitivity; no raw table querying"
+Reports,FG-02,4,Progress,WF-02,2,P,no,INT-019; INT-020; ICD-10; ICD-11; BE-010; BE-022; BPK-013,"Governed projections with semantic state, as-of, freshness, coverage and sensitivity; no raw table querying"
+Reports,FG-02,4,Project,WF-01,2,P,no,CSB-BP2 App D row 1; CSB-BP2 §9; INT-019; INT-020; ICD-10; ICD-11; BE-010; BE-022; BPK-013,"Read Project identity and lifecycle state; consumers reference, never clone · Governed projections with semantic state, as-of, freshness, coverage and sensitivity; no raw table querying"
+Reports,FG-02,4,Risk,WF-06,2,P,no,INT-019; INT-020; ICD-10; ICD-11; BE-010; BE-022; BPK-013,"Governed projections with semantic state, as-of, freshness, coverage and sensitivity; no raw table querying"
+Reports,FG-02,4,Schedule,WF-03,2,P,no,INT-019; INT-020; ICD-10; ICD-11; BE-010; BE-022; BPK-013,"Governed projections with semantic state, as-of, freshness, coverage and sensitivity; no raw table querying"
+Reports,FG-02,4,Suspension,WF-09,2,P,no,INT-019; INT-020; ICD-10; ICD-11; BE-010; BE-022; BPK-013,"Governed projections with semantic state, as-of, freshness, coverage and sensitivity; no raw table querying"
+Reports,FG-02,4,Task,WF-04,2,P,no,INT-019; INT-020; ICD-10; ICD-11; BE-010; BE-022; BPK-013,"Governed projections with semantic state, as-of, freshness, coverage and sensitivity; no raw table querying"
+Reports,FG-02,4,ExternalParticipation,WF-13,3,P,no,INT-019; INT-020; ICD-10; ICD-11; BE-010; BE-022; BPK-013,"Governed projections with semantic state, as-of, freshness, coverage and sensitivity; no raw table querying"
+MasterDataConfig,FG-04,0,Approval,WF-11,1,S,yes,CSB-14A §8 (FG-04 row: OPTIONAL / policy-driven; exact families TBC),Sensitive configuration publication routed through WF-11 — the only upward synchronous call; excluded from the baseline until AHDA names the families
+Approval,WF-11,1,MasterDataConfig,FG-04,0,C,yes,INT-014 (only if the FG-04 → WF-11 edge is enabled),Approval outcome callback for configuration publication
+Approval,WF-11,1,Milestone,WF-05,2,C,yes,INT-014 (only where the conditional WF-02 / WF-05 → WF-11 edge is enabled),Approval outcome callback for conditionally approved progress publication / milestone acceptance
+Approval,WF-11,1,Progress,WF-02,2,C,yes,INT-014 (only where the conditional WF-02 / WF-05 → WF-11 edge is enabled),Approval outcome callback for conditionally approved progress publication / milestone acceptance
+Milestone,WF-05,2,Approval,WF-11,1,S,yes,INT-013; CSB-14A §8 (CONDITIONAL / DOMAIN REVIEW by default),Invoke WF-11 only where governance configuration requires formal approval
+Progress,WF-02,2,Approval,WF-11,1,S,yes,INT-013; CSB-14A §8 (CONDITIONAL / DOMAIN REVIEW by default),Invoke WF-11 only where governance configuration requires formal approval
